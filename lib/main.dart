@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
 
@@ -23,7 +24,12 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Flutter App')),
+      appBar: AppBar(
+        title: const Text('Flutter App'),
+        leading: IconButton(
+            onPressed: () => SystemNavigator.pop(),
+            icon: const Icon(Icons.arrow_back_ios)),
+      ),
       body: const Center(child: Text('Hello Flutter')),
     );
   }
